@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigma Escape - Haunted House</title>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="uk-navbar-container" uk-sticky="top: 0;" style="background: transparent;">
+        <div class="uk-container">
+          <div class="uk-navbar">
+          <!-- Logo bên trái -->
+          <div class="uk-navbar-left" style="margin-left: 5px;">
+            <a class="uk-logo" href="#" style="color: #FFD700; font-weight: bold; font-size: 22px; margin-left: 0; padding-left: 0;">
+                ENIGMA
+            </a>              
+          </div>
+          <!-- Menu chính giữa -->
+          <div class="uk-navbar-center">
+            <ul class="uk-navbar-nav">
+              <li><a href="#">Trang chủ</a></li>
+              <li><a href="#about">Giới thiệu</a></li>
+              <li><a href="#services">Sản phẩm/Dịch vụ</a></li>
+              <li><a href="#how-to-play">Cách chơi</a></li>
+              <li><a href="#rooms-section" >Phòng chơi</a></li>
+              <li><a href="#review">Review</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#recruitment">Tuyển dụng</a></li>
+              <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+            </div>
+            <ul></ul>
+            <div class="uk-navbar-right">
+                <div class="uk-navbar-right">
+                    <div class="uk-flex uk-flex-middle" style="gap: 12px;">
+<!-- Icon đăng nhập dùng để mở modal -->
+    <a href="#login-modal" class="login-icon" uk-toggle uk-tooltip="title: Đăng nhập">
+        <span uk-icon="icon: user; ratio: 1.2" style="color: #FFD700;"></span>
+         </a>
+        </div>
+        </div>
+         <a href="#modal-bookroom" class="cta-fixed-button" uk-toggle>Đặt phòng ngay</a>
+            </ul>
+            </div>
+          </div>
+        </nav>
+<style>
+.uk-navbar-nav > li > a:hover {
+  color: #FFD700;
+  text-shadow:
+    0 0 5px #a9a89e,
+    0 0 10px #d7d0a9,
+    0 0 15px rgba(255, 215, 0, 0.8),
+    0 0 25px rgba(255, 200, 0, 0.6);
+}
+.login-icon {
+  margin-right: 16px;
+  padding: 8px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  background-color: #2d2c2a;
+  border-radius: 20px;
+}
+
+.login-icon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.cta-fixed-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #FFD700;
+  color: #000;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
+  animation: glow 2s infinite ease-in-out;
+  z-index: 9999;
+}
+
+.cta-fixed-button:hover {
+  background-color: #e6c200;
+}
+
+/* Animation phát sáng */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(255, 215, 0, 0.8);
+  }
+}
+</style>
+<!-- TRANG CHỦ -->
+<section class="hero-section">
+  <div class="uk-container">
+    <!-- Tiêu đề Enigma -->
+    <h2 class="about-title" uk-scrollspy="cls: uk-animation-slide-top; repeat: true">
+      ENIGMA ESCAPE ROOM 
+    </h2>
+
+    <!-- Intro Text -->
+    <div class="intro-text" uk-scrollspy="cls: uk-animation-fade; delay: 200">
+      <p><span class="highlight">ENIGMA ESCAPE</span> là một thế giới huyền bí, nơi bạn hóa thân thành nhân vật khác nhau để khám phá những câu chuyện thú vị, giải mã manh mối và đối mặt thử thách. Mỗi chủ đề phòng chơi mang đến cảm giác mới lạ, kích thích tư duy và trải nghiệm bất ngờ.Enigma thu hút hàng trăm lượt khách mỗi ngày nhờ chất lượng dịch vụ và chủ đề hấp dẫn.</p>
+    </div>
+</section>
+<!-- Style -->
+<style>
+.hero-section {
+display: flex; /* Sử dụng Flexbox để căn chỉnh nội dung */
+justify-content: center; /* Căn giữa theo chiều ngang */
+align-items: center; /* Căn giữa theo chiều dọc */
+text-align: center; /* Căn chỉnh văn bản ở giữa */
+position: relative; /* Để có thể áp dụng màu phủ */
+}
+.hero-section {
+background-size: contain;
+height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+color: white;
+position: relative;
+text-align: center;
+}
+
+.about-title {
+font-family:'Times New Roman', Times, serif;
+font-size: 78px;
+text-align: center;
+color: #FFD700;
+font-weight: bold;
+text-shadow: 2px 2px 8px rgba(23, 21, 11, 0.6);
+margin-bottom: 40px;
+letter-spacing: 0.2 px; 
+}
+
+.intro-text p {
+color: #eee;
+font-size: 18 px;
+line-height: 1.8;
+text-align: center;
+max-width: 900px;
+margin: 0 auto 60px auto;
+font-style: italic; 
+}
+</style>  
+<!-- FORM ĐĂNG NHẬP GIẢ LẬP -->
+  <!-- Modal Đăng nhập -->
+  <div id="login-modal" uk-modal>
+    <div class="uk-modal-dialog dark-login-modal">
+  
+      <form onsubmit="return fakeLogin(event)">
+        <div class="uk-margin">
+          <input class="uk-input dark-input" type="text" placeholder="Tên đăng nhập" required>
+        </div>
+        <div class="uk-margin">
+          <input class="uk-input dark-input" type="password" placeholder="Mật khẩu" required>
+        </div>
+      </form>
+      <p class="uk-text-small uk-text-center uk-text-muted">* Đây là form giả lập. Không lưu trữ thông tin.</p>
+    </div>
+  </div>
+<style>
+.dark-login-modal {
+  color: #FFD700;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(14, 14, 11, 0.2);
+  background-color: #111;
+  background-blend-mode: darken;
+}
+
+/* Nền ảnh cho modal */
+.dark-login-modal.with-bg {
+  background-image: url('https://genesis-escape.vn/img/24/how_2.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Input tối */
+.dark-input {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #FFD700;
+  border: 1px solid #FFD700;
+}
+
+.dark-input::placeholder {
+  color: #999;
+}
+
+/* Nút đăng nhập */
+.dark-button {
+  background-color: #FFD700;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.dark-button:hover {
+  background-color: #e6c200;
+  transform: scale(1.05);
+}
+</style>>
+<script>
+    function fakeLogin(event) {
+      event.preventDefault();
+      alert("🔐 Bạn đã đăng nhập thành công (giả lập)!");
+      UIkit.modal('#login-modal').hide();
+      return false;
+    }
+  </script>  
+  <!-- Liên kết trang MXH -->
+  <div class="uk-text-right uk-margin fixed-bottom">
+    <div class="uk-container">
+      <a href="tel:0399367162"><img src="https://genesis-escape.vn/img/new/icon-call.png" alt="Call"></a>
+      <a href="" target="_blank"><img src="https://genesis-escape.vn/img/new/icon-tiktok.png" alt="Tiktok"></a>
+      <a href="" target="_blank"><img src="https://genesis-escape.vn/img/new/icon-fb.png" alt="Facebook"></a>
+      <a href="" target="_blank"><img src="https://genesis-escape.vn/img/new/icon-ista.png" alt="Instagram"></a>
+      <a href=""><img src="https://genesis-escape.vn/img/new/up_arrow.png" alt="Back to Top"></a>
+    </div>
+  </div>
+  <style>
+    .fixed-bottom {
+      position: fixed;
+      bottom: 2%;
+      right: 50;
+      z-index: 999;
+    }
+  </style>
+<!-- TRANG GIỚI THIỆU-->
+<section id="about" class="about-section">
+    <div class="uk-container uk-animation-fade">
+      <h2 class="uk-heading-line uk-text-center" style="font-size: 36px; font-weight: 800; color: #ffff1d;font-family: 'Times New Roman', Times, serif;"><span>CHÀO MỪNG ĐẾN VỚI ENIGMA ESCAPE</span></h2>
+  
+      <div class="content-box uk-box-shadow-large uk-animation-slide-top-small">
+        <p><span class="highlight">ENIGMA ESCAPE</span> là một thế giới huyền bí, nơi bạn sẽ hóa thân thành những nhân vật khác nhau để khám phá những câu chuyện thú vị, giải mã các manh mối và đối mặt với thử thách trong từng phòng chơi.</p>
+  
+        <p>Các phòng chơi của Enigma không chỉ mang đến những thử thách <strong style="color: #dcdc03;">trí tuệ gay cấn</strong> mà còn kiến tạo một hành trình trải nghiệm đầy <strong style="color: #dcdc03;">cảm xúc và ý nghĩa</strong>. Điều làm nên sự khác biệt của chúng tôi chính là <strong style="color: #dcdc03;">chiều sâu</strong> trong từng cốt truyện. Mỗi phòng chơi không chỉ là một tập hợp các câu đố rời rạc, mà là một vở kịch tương tác đầy lôi cuốn, đưa bạn nhập vai vào những nhân vật với số phận và bí mật riêng.<br><br> Cốt truyện được lấy cảm hứng từ những vụ án có thật và nổi tiếng trên Thế Giới giúp mang đến cảm giác mới lạ, kích thích tư duy logic và đem lại trải nghiệm bất ngờ, đầy kịch tính. Được thành lập từ <strong style="color:#dcdc03;">năm 2020</strong>, Enigma Escape hiện sở hữu hàng chục phòng chơi với đa dạng chủ đề, thu hút hàng trăm lượt khách mỗi ngày nhờ chất lượng dịch vụ vượt trội và giá cả hợp lý.</p>
+  
+        <div class="uk-child-width-1-2@m uk-grid-match uk-grid" uk-grid>
+          <div class="uk-animation-slide-left-small">
+            <h3 class="uk-heading-bullet" style="font-size: 22px; color: #ffff1d;">Vị trí trong ngành Escape Room và sứ mệnh của Enigma</h3>
+            <p>Enigma Escape tự hào nằm trong <strong style="color: #AF9533;">Top 100 Escape Rooms hàng đầu thế giới</strong> theo cộng đồng quốc tế <em>Escape The RoomZ</em>. Năm 2023, Enigma đạt vị trí <strong style="color: #AF9533;">72/100</strong> – khẳng định nỗ lực sáng tạo và cải tiến không ngừng.<br><br>Enigma Escape là lựa chọn lý tưởng cho những ai <em>đam mê giải đố</em>, <em>yêu thích nhập vai</em> hoặc chỉ đơn giản là muốn tìm kiếm những giây phút thư giãn, <em>thoát khỏi căng thẳng</em> của cuộc sống thường ngày. <br><br>Với không gian được thiết kế theo phong cách cổ điển nhưng không kém phần rùng rợn, kết hợp âm nhạc được biến tấu theo flow cốt truyện, Enigma Escape sẽ mang đến cho bạn một không gian <em>thư giãn tuyệt vời</em> và những <em>trải nghiệm độc đáo</em> không thể quên.</p>
+          </div>
+          <div class="uk-animation-slide-right-small">
+            <img src="/LABWEB/genesis.png" alt="Escape Room" style="width:100%; border-radius: 8px;">
+          </div>
+        </div>
+        <div class="uk-child-width-1-2@m uk-grid-match uk-grid uk-margin-large-top" uk-grid>
+          <div class="uk-animation-slide-left-small">
+            <h3 class="uk-heading-bullet" style="font-size: 22px; color: #ffff1d;">Phòng Chơi Hiện Đại</h3>
+            <p>Chúng tôi là đơn vị <strong style="color: #AF9533;">tiên phong tại Việt Nam ứng dụng </strong>sử dụng công nghệ cảm ứng hiện đại, thay thế hoàn toàn khóa số truyền thống và giấy tờ. Trò chơi tại Enigma mang đến trải nghiệm sống động, nhập vai <em>chân thật và hấp dẫn</em>.</p>
+          </div>
+          <div class="uk-animation-slide-right-small">
+            <h3 class="uk-heading-bullet" style="font-size: 22px; color: #ffff1d;">Dịch Vụ Chuyên Nghiệp</h3>
+            <p>Đội ngũ nhân viên được <em>đào tạo chuyên nghiệp</em>, luôn sẵn sàng hỗ trợ người chơi suốt hành trình giải mã. Hệ thống hỗ trợ thông minh trong từng phòng đảm bảo khách hàng luôn cảm thấy thoải mái và hứng thú. <br>
+            </p>
+          </div>
+        </div>
+            <h3 class="uk-heading-bullet" style="font-size: 22px; color: #ffff1d; font-weight: 500; font-style: inherit;">Khám phá Enigma Escape</h3>
+            <p style="color: #ccc; margin-top: 20px; font-size: 16px; font-family: sans-serif;">
+                <span style="border: #AF9533;text-shadow: #AF9533;">Xem trailer thực tế từ phòng chơi – <br>
+                cảm nhận không gian nhập vai tại Enigma.</span>
+              </p>
+            <!-- Nhúng video Youtube -->
+              <div class="uk-grid-match uk-child-width-1-1 uk-child-width-1-2@m uk-grid-small" uk-grid>
+                <!-- Video 1 -->
+                <div>
+                  <div class="video-card">
+                    <div class="video-wrapper">
+                      <iframe class="styled-video"
+                        src="https://www.youtube.com/embed/OEA8Qhg0Ga8?si=9dqjuw9AQW0nsfvL" 
+                        title="Video 1"
+                        allowfullscreen></iframe>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=OEA8Qhg0Ga8" target="_blank" class="cta-button">Xem Trên YouTube</a>
+                  </div>
+                </div>
+            
+                <!-- Video 2 -->
+                <div>
+                  <div class="video-card">
+                    <div class="video-wrapper">
+                      <iframe class="styled-video"
+                        src="https://www.youtube.com/embed/ewdZrnE-ciY?si=wadVMqjUc8CH5J5G" 
+                        title="Video 2"
+                        allowfullscreen></iframe>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=ewdZrnE-ciY" target="_blank" class="cta-button">Xem Trên YouTube</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+    <style>
+    .about-section {
+        padding: 80px 30px;
+        background: url('https://genesis-escape.vn/img/24/how_1.png') no-repeat center/cover;
+        color: whitesmoke;
+        z-index: 2;
+      }
+    .content-box {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 40px;
+        border-radius: 12px;
+      }
+  
+      .uk-heading-line span {
+        color: #FFD700;
+        padding: 0 16px;
+      }
+      .highlight {
+        color: #FFD700;
+        font-weight: bold;
+      }
+.styled-video {
+  width: 100%;
+  height: 350px;
+  border: none;
+  display: block;
+}
+.cta-button {
+  background-color: #FFD700;
+  color: #000;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+</style>
+  </section>  
+<!--TRANG SẢN PHẨM/DỊCH VỤ-->
+<title>Sản phẩm & Dịch vụ - Enigma Escape</title>
+<section id="services" class="section-home">
+<div class="background-overlay"></div>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.3/dist/css/uikit.min.css" />
+  <style>
+    body { font-family: 'Arial', sans-serif; margin: 0; background: #000; color: #fff; }
+    .hero-banner {
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      color: #FFD700;
+      font-size: 36px;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px #000;
+    }
+    .section-content {
+      padding: 80px 20px;
+    }
+    .service-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid #FFD700;
+      border-radius: 12px;
+      padding: 30px;
+      transition: all 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+    }
+    .cta-button {
+      background-color: #FFD700;
+      color: #000;
+      padding: 12px 24px;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .cta-button:hover {
+      background-color: #fff;
+      color: #000;
+    }
+</style>
+<br>
+<br>
+  <!-- Hero Banner-->
+    <div class="uk-container">
+    <div class="service-text">
+      <h2 style="color: #fefed9;margin-right: auto; padding-right: 0%;font-family: 'Times New Roman', Times, serif; font-size: 20px; text-align: center;"> <span style="font-weight: bold; font-size: 60px; color: #dcdc03; text-align: center;">ENIGMA</span> <br> <i>Không chỉ là một trò chơi giải trì, mà còn là một hành trình cảm xúc</i></h2>
+    </div>
+  </section>  
+  <!-- Nội dung sản phẩm dịch vụ -->
+  <section class="section-content">
+    <div class="uk-container">
+      <div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
+
+        <div uk-scrollspy="cls: uk-animation-slide-left-medium; repeat: true">
+          <div class="service-card">
+            <h3 class="uk-heading-bullet" style="font-size: 36px; font-weight: 800; color: #ffff1d; font-family: 'Times New Roman', Times, serif;">Trải Nghiệm Mới Lạ & Cảm Xúc</h3>
+            <p style="font-family: 'Times New Roman', Times, serif;">Bạn đang tìm kiếm một trải nghiệm giải trí kịch tính, mới lạ, và đầy cảm xúc? Bạn muốn vừa “giải đố hack não” vừa khám phá chính mình? Chào mừng đến với Enigma Escape!</p>
+          </div>
+        </div>
+
+        <div uk-scrollspy="cls: uk-animation-slide-right-medium; repeat: true">
+          <div class="service-card">
+            <h3 class="uk-heading-bullet" style="font-size: 36px; font-weight: 800; color: #ffff1d; font-family: 'Times New Roman', Times, serif;">Không Chỉ Là Trò Chơi</h3>
+            <p style="font-family: 'Times New Roman', Times, serif;">Enigma escape không chỉ là một mô hình giải đố đơn thuần – mà còn là “trải nghiệm cảm xúc” cùng những “thông điệp giáo dục” được lồng ghép trong cốt truyện của từng phòng chơi.</p>
+            <a href="#rooms-section" class="cta-button">Khám Phá Ngay</a>
+          </div>
+        </div>
+      </div>
+    </div>
+<style>
+    .carousel-img {
+      border-radius: 8px;
+      height: 200px;
+      object-fit: cover;
+  }
+      .highlight-section {
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 60px 20px;
+}
+    .highlight-section h3 {
+      color: #FFD700;
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .btn-see-more {
+      margin-top: 15px;
+      display: inline-block;
+      background: #FFD700;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .team-slide img {
+      border-radius: 12px;
+      height: 240px;
+      object-fit: cover;
+      width: 100%;
+      transition: box-shadow 0.4s ease, transform 0.3s ease;
+    }
+    .glow-wrapper:hover img {
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.7), 0 0 40px rgba(255, 215, 0, 0.6);
+      transform: scale(1.03);
+    }
+    .team-caption {
+      color:whitesmoke;
+      margin-top: 10px;
+      text-align: center;
+      font-style: italic;
+    }
+      .service-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); /* Lớp mờ tối cho dễ đọc chữ */
+        z-index: 0;
+      }
+      
+      .service-text {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: auto;
+      }
+</style>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.3/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.3/dist/js/uikit-icons.min.js"></script>
+<!-- Bảng Giá -->
+<section id="pricing" class="section-content uk-container">
+  <h2 
+    class="uk-heading-line uk-text-center" 
+    uk-scrollspy="cls: uk-animation-slide-bottom-small; repeat: true" 
+    style="font-family: 'Times New Roman', Times, serif;">
+    <span>"CÁI GIÁ PHẢI TRẢ" KHI TỚI ENIGMA</span>
+  </h2>
+
+  <div class="uk-flex uk-flex-center uk-margin-top" 
+       uk-scrollspy="cls: uk-animation-scale-up; repeat: true">
+    <img 
+      src="https://cdn.tcdulichtphcm.vn/upload/4-2022/images/2022-10-26/1666732272-image_2022-10-26_032103266--1-.png" 
+      alt="Bảng giá Enigma"
+      style="width: 900px; height: 400px; border-radius: 12px; transition: transform 0.4s ease, box-shadow 0.3s ease;"
+      onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 10px 30px rgba(255,215,0,0.3)'"
+      onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+    >
+  </div>
+</section>
+<!-- Vinh danh đội thắng -->
+<section class="highlight-section">
+  <h3 style="border: #AF9533; font-family: 'Times New Roman', Times, serif;">
+   <span>"HALL OF FAME<BR>ĐẠI SẢNH "DANH VỌNG"</span>
+   </h3>
+  <div uk-slider="autoplay: true; autoplay-interval: 3000">
+    <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
+      <ul class="uk-slider-items uk-child-width-1-3@m uk-grid-small" uk-grid>
+        <!--Team 1-->
+        <li class="team-slide">
+          <div class="glow-wrapper">
+            <img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-6/487311749_596478836725991_8770425550338964197_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeFdJWwtN8TEBYibzWvYNsbVS0BeIPZFqUdLQF4g9kWpRw7rbEc_ymiA08_v42LWuGPhVtWVtZ789H8ydYVJi47o&_nc_ohc=g6jBe9fTdYoQ7kNvwGRNXGT&_nc_oc=AdlTbVf1dj0zzUOsSDiqXa_8nXOmUkAkw0rKb5NvVyPtrOXLRsR9BQo2AWz8jD3xmhRUcrKwhgbDZtxEq_8b_kHT&_nc_zt=23&_nc_ht=scontent.fhan2-3.fna&_nc_gid=-JLbp1CZ72pXJaAFagutaA&oh=00_AfFarupxl5bhsb1A7xmcSA85lO8BZfxACUkytV5eg8uZSA&oe=680000AD" alt="Đội 1">
+            <footer style="text-align: center;">Đội chơi "Kevin Loi chìm"</footer>
+            <p class="team-caption">"Anh NPC dangiu, chiều khách hết nấc, đóng vai sát nhận mà nhảy cả lên bàn cà hẩy.
+              Chị nạn nhân trong phòng xinh.
+              Đội trưởng Vương phi giới tính, cuti.
+              Thương ma hét khản giọng!
+              Yêu Enigma! Xứng đáng được tặng free 1 buổi"</p>
+          </div>
+        </li>
+        <!--Team 2-->
+        <li class="team-slide">
+          <div class="glow-wrapper">
+            <img src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/485120215_586902967683578_8793862469288205297_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeErka4Y8QDu-ytTCQNBZIKSeropEtCxiEp6uikS0LGISsDPzAjlYjgKaMbVrXEShlRdClVJ-mocwiIoRX0WiocF&_nc_ohc=URv4WfduXYQQ7kNvwGkzZNr&_nc_oc=AdleTVyot-r-URv17zV9jbJN4vk0kbyLTrJdP9VPwkAz9qtmoe7oFxj3asl7ZjJKQuYRdWvqM91a9muKrV14H5Ib&_nc_zt=23&_nc_ht=scontent.fhan2-5.fna&_nc_gid=w6WyMJDKmroHu5Rw__hpkA&oh=00_AfEBXCTXwxWYxvCcbROrwSnhuSghYZJSgUCXvF3nHnPmZw&oe=68000E7F" alt="Đội 2">
+            <footer style="text-align: center;">Đội chơi "Cá đeo"</footer>
+            <p class="team-caption">"Chị báo án đừng nhai đầu em.
+              NPC quá đỉnh đi.
+              Tuyệt đối kẹo ngọt, tuyệt đối điện ảnh.
+              Khách... tới chơi... nhà... rằng... khách... tới chơi nhà"</p>
+          </div>
+        </li>
+        <!--Team 3-->
+        <li class="team-slide">
+          <div class="glow-wrapper">
+            <img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-6/484516238_586898761017332_117313572065607029_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeEXC-JIhlDKqLZmAOqaq6qOmHr1dFkhvV2YevV0WSG9XaDk469xeKJ7hODs26m8Zc1xmF6mlwUV6rC06_jU701O&_nc_ohc=ALwtuigSgtkQ7kNvwHPIL_a&_nc_oc=Adl4hIF448ffCPnXJ0iVMN4LehY1uP0K8j2klRb7sfqgpIvtHgCcS4Cok6xc4aOUOL7D31QFXAPIAxeeUmD5kTuA&_nc_zt=23&_nc_ht=scontent.fhan2-3.fna&_nc_gid=TGLuRagPWMeZDRf7M7IBxw&oh=00_AfHbm9b6nvGtzQg3_W70zTFh637CG0tVhMLd_mPwyzPxnw&oe=67FFF4F2" alt="Đội 3">
+            <footer style="text-align: center;">Đội chơi "Vô Danh"</footer>
+            <p class="team-caption">"Hụt hẫng khi không có M**
+              Ma to ghê quá trời.
+              NPC đẹp trai cute, chúc bạn sớm tháo niềng nha.
+              Đau dạ dày quá, chọn người khỏe đuổi giúp tui.”"</p>
+          </div>
+        <!--Team 4-->
+        </li>
+        <li class="team-slide">
+          <div class="glow-wrapper">
+            <img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-6/490147008_605959142444627_6997978552016224386_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeERvcsfeW0Wfe6B3czZXzvimGIIYrAfhjCYYghisB-GME8lempS55a7snOF5OYX4oQAwOunQRQliOHURIiLTqB7&_nc_ohc=bAWZPhG4KAUQ7kNvwE8a_kM&_nc_oc=AdkNl3AsXPAoCU5RWpHI-vNJiNSfkOJEkGaZ6-wgMQ3L3GAm4VD7iraSWrXjt-8zxnnrZJ4Z6Ug2sfJSS8hj-UqS&_nc_zt=23&_nc_ht=scontent.fhan2-3.fna&_nc_gid=GnJJadjI_oLbUqJBGrCHlg&oh=00_AfE2Dt-uxwE1TyFUDvu48OD707264YiysfRZepdy3pbURQ&oe=68000E57" alt="Đội 4">
+            <footer style="text-align: center;">Đội chơi "Enigma con"</footer>
+            <p class="team-caption">"Phòng chơi quá tuyệt vời. 
+              Âm thanh và không gian giúp người chơi có một trải nghiệm tuyệt vời.
+              Chúng tôi sẽ quay lại vào lần sau.
+              NPC quá đỉnh,diễn đạt.
+              Quá yêu Enigma. "</p>
+          </div>
+        </li>
+        <!--Team 5-->
+        <li class="team-slide">
+          <div class="glow-wrapper">
+            <img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/490526152_605168739190334_3114955612082063789_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeHCFKx3_0AnjzQtxGLmTjLBglxoLjbVo6iCXGguNtWjqOOL9vxXcTMCEgnpg_ruxBPwiWGZrPWN9UwimpqySgh8&_nc_ohc=u5gHze4c1VgQ7kNvwFLn9ds&_nc_oc=Adlo-2kQlKUO8o_ZJEYqLgzmFMpxGTqFzYs0MdTyNoFaYsgJs-wC_SnaThIZ3OJBmBCHK7pbwlzSUiBOllcl19tJ&_nc_zt=23&_nc_ht=scontent.fhan2-4.fna&_nc_gid=C6ZAT5xEwjkPmzfxtRFV_A&oh=00_AfEBToTAaVlF5lVdZnyHWBX9uUg-6du9yYUHKy1BBsgSlQ&oe=67FFF48E" alt="Đội 5">
+            <footer style="text-align: center;">Đội chơi "Trí tuệ siêu phàm"</footer>
+            <p class="team-caption">"NPC múa siêu đẹp, siêu dẹo, cơ chế phòng chơi siêu hay, phòng này không dồn dập và căng thẳng như phòng chơi Vanished mà khá came động, cốt truyện logic, hay, và phải nói là tuyệt đối điện ảnh, không gian nghệ thuật rất đẹp!"</p>
+          </div>
+        </li>
+        <!--Team 6-->
+        <li class="team-slide">
+          <div class="glow-wrapper">
+            <img src="https://scontent.fhan20-1.fna.fbcdn.net/v/t39.30808-6/490473451_606798555694019_2262306457721721469_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeEdzWuWgQPY97x7ieTPkDAEiP3m8jLiDHaI_ebyMuIMdhI5_mSGmsgKS7-s5rw-eI1xnaFKudFZj3yu4AAlbXIL&_nc_ohc=r2MoWuw7W5gQ7kNvwFH2as7&_nc_oc=AdkrWeEtrlypGrj5XlcotWeeiQ_btP6aCIiL0smkmFrbpbrZg5nJaLZxhkhdalzSknv7BK2wJl1OhsxKCNboVs8H&_nc_zt=23&_nc_ht=scontent.fhan20-1.fna&_nc_gid=dX2JS5ktVmfnU8cACzg_tA&oh=00_AfE6GthxFjo2YG6uXJgxs2CgC8obzqgMF-Uxp4wBd31pJQ&oe=67FFE264" alt="Đội 6">
+            <footer style="text-align: center;">Đội chơi "Bừa đi</footer>
+            <p class="team-caption">"Cốt truyện hay, ý nghĩa, xúc động với người chơi.
+              Nhân viên diễn tốt, nhập tâm và gây cảm động cho người chơi.
+              Thiết kế và thi công phòng chơi chỉn chu, đầu tư.
+              Nói chung là kỷ niệm tuyệt vời bên bạn bè ở Enigma."</p>
+          </div>
+        </li>
+        <!--Team 7-->
+        <li class="team-slide">
+          <div class="glow-wrapper">
+            <img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/490477994_606123802428161_3972875382127279307_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeH-60YHjf-4VI2TjV1ss__e0crzTesNVhfRyvNN6w1WF-lfshWKkonIQZuATS2U5FENOUJngtxeG5BuPZ88aLMo&_nc_ohc=V66pqRJybpEQ7kNvwG2In-l&_nc_oc=AdlfMMlfV1nwcFtpsQMVFnGqKvBdsuSO26LF1AtjLWk_0MzT3TVunsn0nfZIOmsVrwsSCS1o2aSnF-1wHFt5OGEu&_nc_zt=23&_nc_ht=scontent.fhan2-4.fna&_nc_gid=0UshP9be9qfrE21OTPB-MQ&oh=00_AfEz2KzwlMEywbSXbqPxSyyMxjHyzKTTfkcobPEhC6H-6A&oe=67FFDC8B" alt="Đội 7">
+            <footer style="text-align: center;">Đội chơi "Hội chim đỏ"</footer>
+            <p class="team-caption">"Cốt truyện hay, ý nghĩa, gây cảm động với người chơi.
+              Nhân viên diễn tốt lắm, nhập tâm và gây cảm động lắm với người chơi.
+              Thiết kế và thi công phòng chơi chỉnh chu, đầu tư và tôi không hiểu nguyên lý hoạt động của mấy cái chạm chạm!"</p>
+          </div>
+        </li>
+      </ul>
+
+      <a class="uk-position-center-left uk-position-small uk-visible@m" href="#" uk-slider-item="previous">❮</a>
+      <a class="uk-position-center-right uk-position-small uk-visible@m" href="#" uk-slider-item="next">❯</a>
+    </div>
+  </div>
+</section>
+<!-- Bài báo về Enigma -->
+<section class="section-content uk-container">
+  <h2 class="uk-heading-line uk-text-center"><span>Báo Chí Nói Gì Về Chúng Tôi</span></h2>
+  <ul class="uk-list uk-list-divider">
+    <li><a href="https://genesis-escape.vn">[Báo Thanh Niên] Trải nghiệm cảm xúc tại Enigma Escape</a></li>
+    <li><a href="https://genesis-escape.vn">[Zing News] Không gian Escape Room độc đáo giữa lòng Hà Nội</a></li>
+    <li><a href="https://genesis-escape.vn">[Kenh14] Giới trẻ đổ xô đi trải nghiệm Enigma Escape</a></li>
+    <li><a href="https://genesis-escape.vn">[Báo Thanh Niên] Trải nghiệm cảm xúc tại Enigma Escape</a></li>
+    <li><a href="https://genesis-escape.vn">[Zing News] Không gian Escape Room độc đáo giữa lòng Hà Nội</a></li>
+  </ul>
+</section>
+                                    <!--TRANG HƯỚNG DẪN CÁCH CHƠI-->
+<section id="how-to-play" class="how-to-play uk-section">
+    <div class="background-overlay">
+    <div class="uk-container uk-position-relative">
+      <h2 class="uk-text-center" style="font-size: 36px; font-weight: 800; color: #ffff1d; text-transform: uppercase; margin-bottom: 0%; font-family: 'Times New Roman', Times, serif;">
+        Hướng Dẫn Cách Chơi
+      </h2>
+      <div class="uk-grid-match uk-child-width-1-1 uk-child-width-1-2@m uk-grid-small" uk-grid>
+        <div uk-scrollspy="cls: uk-animation-slide-left-small; repeat: true">
+          <div class="uk-card uk-card-body how-card">
+            <h3 class="step-title uk-heading-bullet" style="color:rgb(216, 200, 20);">1. Bước vào Thế Giới Huyền Bí Enigma</h3>
+            <p class="step-desc">Bạn đã sẵn sàng khám phá một vũ trụ game nhập vai độc đáo, dẫn lối người chơi đến với những ranh giới giữa thực và ảo,  mỗi quyết định đều có thể thay đổi số phận? Hãy tập hợp chiến hữu, bởi hành trình Enigma đang vẫy gọi!</p>
+            </p>
+          </div>
+        </div>
+        <div uk-scrollspy="cls: uk-animation-slide-right-small; repeat: true">
+          <div class="uk-card uk-card-body how-card">
+            <h3 class="step-title uk-heading-bullet" style="color:rgb(216, 200, 20);">2. Đặt Phòng Trước</h3>
+            <p class="step-desc">Mỗi ngày, cánh cửa Enigma chỉ mở ra 13 lần, và mỗi chuyến phiêu lưu sẽ kéo dài 60 phút nghẹt thở. Để đảm bảo bạn và đồng đội không bỏ lỡ cơ hội khám phá những bí ẩn đang chờ đợi, hãy nhanh tay đặt phòng trước qua website chính thức hoặc Fanpage của Enigma. Lưu ý quan trọng: Hãy hoàn thành thanh toán cọc đúng hạn để xác nhận giữ chỗ và chắc chắn đội của bạn sẽ được triệu hồi vào thế giới game.</p>
+            </p>
+          </div>
+        </div>
+        <div uk-scrollspy="cls: uk-animation-slide-left-small; repeat: true">
+          <div class="uk-card uk-card-body how-card">
+            <h3 class="step-title uk-heading-bullet" style="color:rgb(216, 200, 20);">3. Lập Đội Chinh Chiến</h3>
+            <p class="step-desc">Để phiêu lưu vào thế giới Enigma đầy mê hoặc, bạn cần một đội quân tinh nhuệ từ 4 đến 8 người. Đây là đội hình lý tưởng để đảm bảo sự phối hợp nhịp nhàng, cùng nhau vượt qua mọi hiểm nguy và tận hưởng trọn vẹn những trải nghiệm kịch tính. Nếu bạn chưa có đủ đồng đội? Đừng lo lắng! Hãy gia nhập ngay nhóm Review - Ghép Nhóm Enigma trên Facebook để tìm kiếm những chiến binh quả cảm, sẵn sàng sát cánh cùng bạn trên mọi nẻo đường.</p>
+            </p>
+          </div>
+        </div>
+        <div uk-scrollspy="cls: uk-animation-slide-right-small; repeat: true">
+          <div class="uk-card uk-card-body how-card">
+            <h3 class="step-title uk-heading-bullet" style="color:rgb(216, 200, 20);">4. Đối Mặt Thử Thách</h3>
+            <p class="step-desc">Bước chân vào Enigma, bạn sẽ lạc vào những không gian đậm chất tâm linh và kinh dị. Hãy chuẩn bị tinh thần đối diện với những tương tác bất ngờ từ các nhân vật phụ đầy bí ẩn. Trong mỗi căn phòng, vô vàn câu đố hóc búa, những thử thách thể lực cam go, và những tình huống đòi hỏi khả năng xử lý nhanh nhạy đang chờ đợi.</p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+<style>
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 13px; /* hoặc dùng margin giữa các item */
+}
+.how-to-play uk-section {
+  position: relative;
+  padding: 15px;
+}
+.how-to-play .uk-container {
+  position: relative;
+  z-index: 2;
+}
+</style>
+</section>
+<section>
+  <div class="section uk-flex uk-flex-middle uk-section home__section home__section4" 
+    style="background: url(https://genesis-escape.vn/img/24/footer.png); 
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 100px;">
+    <div class="uk-width">
+        <div class="uk-container">
+            <div class="uk-flex-center" uk-grid>
+                <div class="uk-width-auto">
+                    <div class="section4__box uk-flex uk-flex-middle">
+                        <div class="uk-width">
+                            <div class="uk-child-width-expand uk-grid-match" uk-grid>
+                                <div>
+                                    <div class="uk-text-center" style="color: #3E7EC9; font-size: 40px;font-family: 'Times New Roman', Times, serif;">
+                                        <div class="section4__box__txt1">15198</div>
+                                        <div class="section4__box__txt2">PLAYER</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-text-center" style="color: #AF9533; font-size: 40px; font-family: 'Times New Roman', Times, serif;">
+                                        <div class="section4__box__txt1">7265</div>
+                                        <div class="section4__box__txt2">WINNER</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-text-center" style="color: #DF7D46; font-size: 40px; font-family: 'Times New Roman', Times, serif;">
+                                        <div class="section4__box__txt1">10252</div>
+                                        <div class="section4__box__txt2">RETURN</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+<!--TRANG PHÒNG CHƠI-->
+<section id="rooms-section" class="uk-section">
+<title>Chọn Phòng Escape</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.3/dist/css/uikit.min.css" />
+  <style>
+    body {
+      background-color: #0e0e0e;
+      background-image: url('https://genesis-escape.vn/img/24/1.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .section2__card {
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.3s;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+    }
+
+    .section2__card.selected {
+      border-color: #AF9533;
+    }
+
+    .section2__star {
+      color: #ccc;
+    }
+
+    .section2__star--on {
+      color: #FFD700;
+    }
+
+    .story-panel {
+      color: #ddd;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      backdrop-filter: blur(4px);
+    }
+
+    .story-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #FFD700;
+  font-family:'Times New Roman', Times, serif, Geneva, Verdana, sans-serif;
+}
+    .story-text {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #ccc;
+    }
+
+    .room-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .room-info {
+      flex: 2;
+    }
+    .story-panel::before {
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+  z-index: 1;
+}
+    .story-panel {
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center;
+  color: #ddd;
+  padding: 90px;
+  margin-top: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  transition: background-image 0.5s ease-in-out;
+}
+
+    @media (max-width: 768px) {
+      .room-wrapper {
+        flex-direction: column;
+      }
+    }
+
+    .btn-book {
+      margin-top: 20px;
+      background: linear-gradient(to right, #AF9533, #FFD700);
+      color: #000;
+      padding: 12px 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+    }
+
+    .btn-book:hover {
+      background: #FFD700;
+    }
+  </style>
+</head>
+<div class="uk-container uk-margin-top">
+  <div class="uk-grid-large" uk-grid>
+    <!-- Danh sách phòng -->
+    <div class="uk-width-1-2@m">
+      <div class="uk-grid-small uk-child-width-1-2@s" uk-grid id="room-list"></div>
+    </div>
+
+    <!-- Cốt truyện -->
+    <div class="uk-width-1-2@m">
+      <div class="story-panel" id="story-panel">
+        <div class="story-content">
+          <div class="story-title style="font-size: 25px; font-weight: 800; id="story-title"> CHOOSE THE ROOM YOU WANT - "Khám phá cốt truyện chỉ với một chạm"</div>
+          <div class="story-text" id="story-text"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const rooms = [
+    {
+        id: 5,
+        name: "Incantation - Huyết Ngải",
+        image: "https://genesis-escape.vn/images/Thumbnail.jpg",
+        level: 4.5,
+        genre: "Kinh dị – Tâm linh",
+        story: "Một căn phòng cổ xưa, những giọng nói thì thầm và chuỗi những ký ức bị phong ấn... Bạn có dám mở ra? Đóng vai một nhóm nhà nghiên cứu sinh về văn hóa dân gian và những hiện tượng siêu nhiên. Các bạn được cử đến khám phá một căn biệt thự cổ kính, nằm sâu trong một vùng quê hẻo lánh. Ngôi biệt thự này nổi tiếng với những lời đồn đại rùng rợn về một lời nguyền cổ xưa đã đeo bám gia tộc chủ nhân qua nhiều thế hệ. Những <span style='color:#ffff1d'><b><i>giọng nói</i></b></span>  thì thầm, những <span style='color:#ffff1d'><b><i>hiện tượng</i></b></span>  kỳ lạ, những <span style='color:#ffff1d'><b><i>giấc mơ</i></b></span>  kinh hoàng...những <span style='color:#ffff1d'><b><i>ký ức bị phong ấn</i></b></span>  ẩn sâu trong căn biệt thự là gì,  liệu bạn có đủ khả năng tìm ra được sự thật kinh hoàng đã được chôn giấu kỹ suốt 10 năm hay sẽ bị căn nhà nuốt chửng?"
+      },
+      {
+        id: 7,
+        name: "Moonlight Hotel - The Red room",
+        image: "https://genesis-escape.vn/images/Artboard%2013.png",
+        level: 5,
+        genre: "Kinh dị – Tâm linh",
+        story: "Khách sạn <span style='color:#ffff1d'><b><i>Ánh Trăng</i></b></span> từng là một biểu tượng xa hoa của thành phố, nhưng sau một loạt những sự kiện kinh hoàng và những vụ <span style='color:#ffff1d'><b><i>mất tích</i></b></span>  bí ẩn, nó đã bị bỏ hoang suốt nhiều thập kỷ. Tâm điểm của những lời đồn rợn người chính là <span style='color:#ffff1d'><b><i>căn phòng số 13</i></b></span>  mang một sắc đỏ đầy ma mị - căn phòng cuối cùng ở tầng cao nhất, luôn khóa chặt và phủ đầy bụi mù của thời gian.Truyền thuyết kể rằng ai bước vào đều <span style='color:#ffff1d'><b><i>không thể quay lại</i></b></span> . Những <span style='color:#ffff1d'><b><i>giọng nói</i></b></span>  thì thầm vang lên từ hư vô, những <span style='color:#ffff1d'><b><i>bóng hình mờ ảo</i></b></span>  lướt qua góc phòng, và những <span style='color:#ffff1d'><b><i>ký ức đau thương</i></b></span>  dường như vẫn còn vương vấn trong không khí. Liệu họ sẽ là người đưa tội ác ẩn sau căn phòng số 13 của khách sạn ra ánh sáng hay lại là những nạn nhân tiếp theo kết thúc cuộc đời mình nơi khách sạn tăm tối này."
+      },
+      {
+        id: 8,
+        name: "Vanished - Hồi ức phi cơ 370",
+        image: "https://genesis-escape.vn/images/APT%2031.jpg",
+        level: 4,
+        genre: "Trinh thám – Hồi hộp",
+        story: "Một chuyến bay định mệnh bất ngờ gặp tai nạn. Đóng vai nhân viên của đội điều tra, bạn được triệu tập để khám phá điều bí ẩn ẩn sâu trong khoang máy bay cuối cùng và tìm ra nguyên do gây nên <span style='color:#ffff1d'><b><i>vụ tai nạn kinh hoàng</i></b></span> . Thời gian không còn nhiều... Những <span style='color:#ffff1d'><b><i>mật mã</i></b></span> kỳ lạ, những ghi chú vội vã, những thiết bị không xác định ẩn chứa trong khoang máy…Liệu đây chỉ là một <span style='color:#ffff1d'><b><i>sự cố không may</i></b></span> hay là âm mưu của một <span style='color:#ffff1d'><b><i>thế lực đen tối</i></b></span> nào đó? Liệu bạn có đủ kỹ năng nghiệp vụ để mang hung thủ ra ánh sáng và tìm lại công lý cho những nạn nhân xấu số?."
+      },
+      {
+        id: 9,
+        name: "The Last Dance - Oán Vũ",
+        image: "https://genesis-escape.vn/images/thumb%20o%C3%A1n%20v%C5%A9.jpg",
+        level: 4,
+        genre: "Bí ẩn - Tâm linh - Lịch sử",
+        story: "Đóng vai một nhóm nghiên cứu sinh trẻ tuổi, các bạn bỗng nhận được một lời mời ẩn danh để tới một buổi biểu diễn đặc biệt cuối cùng tại rạp hát <span style='color:#ffff1d'><b><i>Kim Nguyệt</i></b></span> , nơi đây là một thánh đường nghệ thuật từng vang danh khắp chốn, nay đã chìm vào quên lãng suốt ba thập kỷ. <span style='color:#ffff1d'><b><i>Lời mời</i></b></span>  được gửi đi một cách bí ẩn, không rõ người gửi, càng thôi thúc sự tò mò và linh cảm về một điều khác thường. Lần theo <span style='color:#ffff1d'><b><i>dấu vết của quá khứ</i></b></span> , giải mã những bí ẩn ẩn sau những hiện vật còn sót lại, và tìm hiểu nguyên nhân thực sự dẫn đến <span style='color:#ffff1d'><b><i>vụ thảm kịch</i></b></span>  năm xưa. Liệu đó là một tai nạn, một âm mưu đen tối, hay thực sự là một lời nguyền nghiệt ngã đã khiến cho rạp hát Kim Nguyệt bỗng phá sản chỉ sau một đêm?."
+      },
+      {
+        id: 10,
+        name: "Kỳ án nhà xác - The Morge",
+        image: "https://genesis-escape.vn/images/logo%20GUM.png",
+        level: 4,
+        genre: "Bí ẩn - Tâm linh",
+        story: "Nhập vai vào một nhóm thực tập sinh ngành Y được xử đến học việc tại một <span style='color:#ffff1d'><b><i>nhà xác</i></b></span>  bệnh viện trong thành phố. Vào một buổi giao ca như thường lệ, nhóm sinh viên phát hiện ra những bí mật đáng sợ đằng sau những hoạt động cất giữ xác <span style='color:#ffff1d'><b><i>mờ ám</i></b></span> ở nơi đây. Họ không hề biết chính sự tò mò đó đã đưa cả nhóm đến với ranh giới của <span style='color:#ffff1d'><b><i>sự sống và cái chết</i></b></span> , của những <span style='color:#ffff1d'><b><i>nghi thức hiến tế</i></b></span>  man rợ kinh hoàng! Liệu họ sẽ là người đưa tội ác ra ánh sáng hay lại là những nạn nhân tiếp theo kết thúc cuộc đời mình nơi nhà xác lạnh lẽo, đầy tăm tối này."
+      },
+      {
+        id: 11,
+        name: "Trốn tìm - Hide and seek",
+        image: "https://genesis-escape.vn/images/hns.jpg",
+        level: 4.5,
+        genre: "Kinh dị – Tâm linh",
+        story: "Nhập vai vào một nhóm học sinh cấp 3, tò mò về những câu chuyện ma quái bao trùm <span style='color:#ffff1d'><b><i>ngôi trường cũ</i></b></span>, đã quyết định hẹn nhau tại chốn cũ năm xưa để tìm ra bí mật còn ẩn giấu. Những <span style='color:#ffff1d'><b><i>màn hù dọa</i></b></span>  lẫn nhau trong bóng tối, những lời nói trêu đùa và tiếng bước chân chạy dọc hành lang, nhưng dường như, có một kẻ khác cũng đang tham gia trò chơi và chuyến thám hiểm của họ. Người đang đếm ngược ngoài sân trường là ai? Tiếng đếm đều đặn, vô hồn, như một lời triệu hồn từ quá khứ. Không ai nhìn thấy hắn, nhưng sự hiện diện của hắn bao trùm mọi ngóc ngách. Hắn <span style='color:#ffff1d'><b><i>TÌM</i></b></span>  các bạn với mục đích gì? Phải chăng hắn là <span style='color:#ffff1d'><b><i>linh hồn lang thang</i></b></span>  bị trói buộc nơi này, hay một <span style='color:#ffff1d'><b><i>thế lực tà ác</i></b></span>  đang lợi dụng trò chơi trẻ con để thực hiện một nghi lễ?"
+      },
+      ];
+
+    const roomList = document.getElementById('room-list');
+    const storyPanel = document.getElementById('story-panel');
+
+    rooms.forEach(room => {
+      const card = document.createElement('div');
+      card.innerHTML = `
+        <label>
+          <input class="uk-radio" type="radio" name="room_id" style="display:none">
+          <div class="section2__card uk-card uk-card-body uk-height-1-1 uk-padding-small" data-room-id="${room.id}">
+            <div class="uk-cover-container uk-border-rounded">
+              <img src="${room.image}" alt="${room.name}" uk-cover>
+              <canvas width="322" height="214"></canvas>
+            </div>
+            <div class="uk-margin-small-top uk-text-bold">${room.name}</div>
+            <div class="uk-text-meta uk-margin-small-top">${room.genre}</div>
+            <div class="uk-flex uk-flex-middle uk-margin-small-top">
+              <div class="uk-text-small">Level:</div>
+              <div class="uk-margin-small-left">
+                ${"★".repeat(Math.floor(room.level)).replace(/★/g, '<i class="section2__star section2__star--on">★</i>') +
+                  (room.level % 1 !== 0 ? '<i class="section2__star section2__star--on">★</i>' : "") +
+                  (room.level < 5 ? "<i class='section2__star'>★</i>".repeat(5 - Math.ceil(room.level)) : "")}
+              </div>
+            </div>
+          </div>
+        </label>
+      `;
+      roomList.appendChild(card);
+    });
+
+    document.querySelectorAll('.section2__card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.section2__card').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+
+        const roomId = parseInt(card.dataset.roomId);
+        const room = rooms.find(r => r.id === roomId);
+        if (room) {
+            storyPanel.style.backgroundImage = `url('${room.image}')`;
+            storyPanel.innerHTML = `
+    <div style="background: rgba(0,0,0,0.7); padding: 20px; border-radius: 10px;">
+      <h4 class="story-title">${room.name}</h4>
+    
+            <p class="story-text">${room.story}</p>
+            <button class="btn-book" onclick="UIkit.modal('#modal-bookroom').show()">Đặt phòng ngay</button>
+          `;
+        }
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.3/dist/js/uikit.min.js"></script>
+  <!-- Hidden input nếu bạn cần submit form -->
+<title>Enigma Booking - Frontend Demo</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/css/uikit.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css">
+<style>
+  .modal__booking { padding: 20px; background: #06020243; border-radius: 10px; }
+  .btn-primary { background: #1e87f0; color: white; padding: 10px 20px; border: none; border-radius: 6px; }
+  .uk-modal-dialog { width: 500px; }
+</style>
+<!-- Booking Button -->
+<div class="uk-container uk-margin-large-top uk-text-center">
+</div>
+</section>
+<!-- TRANG REVIEW -->
+<section id="review" class="uk-section" style="background-color: transparent; padding: 80px 0;">
+<section id="review" class="uk-section">
+    <div class="uk-container">
+      <h2 class="uk-text-center" style="font-size: 36px; font-weight: 800; color: #FFD700; margin-bottom: 20px; font-family: 'Times New Roman', Times, serif;">
+       KHÁCH HÀNG NÓI GÌ VỀ ENIGMA?
+      </h2>
+  
+      <div uk-slider="autoplay: true; autoplay-interval: 4000">
+        <div class="uk-position-relative">
+  
+          <ul class="uk-slider-items uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small">
+            <!-- Review 1 -->
+            <li>
+              <div class="uk-card review-card">
+                <blockquote>
+                  <p>“Phòng chơi siêu cuốn, âm thanh ánh sáng như trong phim, nhân viên hướng dẫn cực kỳ tận tình! Không gian rất nhập vai, cảm giác như đang ở trong một bộ phim kinh dị thực thụ vậy!😱😱😱”</p>
+                  <footer class="uk-text-meta">— Ngọc Thảo</footer>
+                </blockquote>
+                <div class="stars">★★★★★</div>
+              </div>
+            </li>
+  
+            <!-- Review 2 -->
+            <li>
+              <div class="uk-card review-card">
+                <blockquote>
+                  <p>“Chúng tôi đi team building và có một trải nghiệm không thể quên! Các thử thách quá đã, đòi hỏi teamwork và sự nhanh trí liên tục. Chắc chắn sẽ quay lại những phòng khác của Enigma.”</p>
+                  <footer class="uk-text-meta">— Minh Long</footer>
+                </blockquote>
+                <div class="stars">★★★★★</div>
+              </div>
+            </li>
+  
+            <!-- Review 3 -->
+            <li>
+              <div class="uk-card review-card">
+                <blockquote>
+                  <p>“Lần đầu đi escape room mà ấn tượng như vậy. Có lúc phải chạy luôn vì hết hồn 😱 nhưng rất đã. Nhân viên hỗ trợ đúng lúc, không spoil mà vẫn gợi ý cực thông minh!”
+                </p>
+                  <footer class="uk-text-meta">— Tôn Hoàng</footer>
+                </blockquote>
+                <div class="stars">★★★★★</div>
+              </div>
+            </li>
+  
+            <!-- Review 4 -->
+            <li>
+              <div class="uk-card review-card">
+                <blockquote>
+                  <p>"Tưởng đi giải trí ai ngờ hú hồn chim én mấy lần. Mấy đứa bạn đứa thì khóc thét, đứa thì đòi bỏ cuộc. Riêng tui thì vừa run vừa cố tỏ ra nguy hiểm. May mà anh nhân viên đẹp trai chỉ bài nhiệt tình, không là cả đám ở lại 'ăn Tết' trong đó luôn rồi!"</p>
+                  <footer class="uk-text-meta">— Mai Hân</footer>
+                </blockquote>
+                <div class="stars">★★★★★</div>
+              </div>
+            </li>
+             <!-- Review 5 -->
+             <li>
+                <div class="uk-card review-card">
+                  <blockquote>
+                    <p>"Đi xong về vẫn không hiểu tại sao mình giải được mấy cái đó. Chắc do ăn may. Mấy đứa kia thì cứ 'ối giời ơi' làm mình cũng hoang mang theo. Nói chung là cũng vui, nhưng mà lần sau cho tui chơi phòng nào 'hiền' hơn xíu nha, tim tui yếu lắm!"</p>
+                    <footer class="uk-text-meta">— Nam Thành</footer>
+                  </blockquote>
+                  <div class="stars">★★★★★</div>
+                </div>
+              </li>
+               <!-- Review 6 -->
+            <li>
+                <div class="uk-card review-card">
+                  <blockquote>
+                    <p>"Cuối cùng cũng có chỗ cho tui 'bung lụa' la hét mà không ai nói gì. Mấy cái jump scare làm tui tỉnh cả ngủ. Team tui đứa nào giọng cũng khàn hết rồi. Giải xong còn muốn ở lại 'quẩy' thêm. 10 điểm không có nhưng!" Ncl vui vượt mức pickleball</p>
+                    <footer class="uk-text-meta">— Phạm Hải Hà</footer>
+                  </blockquote>
+                  <div class="stars">★★★★★</div>
+                </div>
+              </li>
+          </ul>
+  
+          <!-- Navigation arrows -->
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slider-item="previous" uk-icon="icon: chevron-left; ratio: 1.5"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slider-item="next" uk-icon="icon: chevron-right; ratio: 1.5"></a>
+        </div>
+  
+        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+      </div>
+    </div>
+    <style>
+        .review-card {
+          background:rgba(195, 188, 225, 0.2);;
+          padding: 30px;
+          border-radius: 12px;
+          color: #fff;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+          transition: transform 0.3s ease;
+        }
+      
+        .review-card:hover {
+          transform: translateY(-5px);
+        }
+      
+        .review-card blockquote {
+          font-style: italic;
+          font-size: 17px;
+          margin-bottom: 15px;
+          color: whitesmoke;
+        }
+      
+        .stars {
+          color: #FFD700;
+          font-size: 20px;
+          margin-top: 5px;
+        }
+      
+        @media (max-width: 640px) {
+          .review-card {
+            padding: 20px;
+          }
+        }
+      </style>      
+  </section>  
+<!-- Form booking phòng -->
+<section>
+<div id="modal-bookroom" class="uk-flex-top" uk-modal>
+<div class="uk-modal-dialog uk-margin-auto-vertical modal__booking">
+  <button class="uk-modal-close-default" type="button" uk-close></button>
+  <h3 class="uk-modal-title" style="font-size: 36px; font-weight: 800; color: #ffff1d; text-align: center;font-family: 'Times New Roman', Times, serif;">ĐẶT PHÒNG</h3>
+  <form id="booking-form">
+    <div class="uk-margin">
+      <input class="uk-input" type="text" name="full_name" placeholder="Họ và tên" required>
+    </div>
+    <div class="uk-margin">
+      <input class="uk-input" type="tel" name="phone" placeholder="Số điện thoại" required>
+    </div>
+    <div class="uk-margin">
+      <input class="uk-input" id="datepickerday" type="text" name="booking_date" placeholder="Chọn ngày chơi" required>
+    </div>
+    <div class="uk-margin">
+      <select class="uk-select" id="coso" name="coso_id" required onchange="updateRooms()">
+        <option value="">Chọn cơ sở</option>
+        <option value="1">Tầng 5, 158 Chùa Láng, Láng Thượng, Đống Đa, Hà Nội</option>
+        <option value="1"> Tâng 3, 189 Hoàng Cầu, Láng Thượng, Đống Đa, Hà Nội</option>
+      </select>
+    </div>
+    <div class="uk-margin">
+      <select class="uk-select" id="room" name="room_id" required>
+        <option value="1">Incantation - Huyết Ngải</option>
+        <option value="2">Moonlight Hotel - The Red room</option>
+        <option value="3">Vanished - Hồi ức phi cơ 370</option>
+        <option value="4">The Last Dance - Oán Vũ</option>
+        <option value="5">Kỳ án nhà xác - The Morge</option>
+        <option value="6">Trốn tìm - Hide and seek</option>
+      </select>
+    </div>
+    <div class="uk-margin">
+      <select class="uk-select" name="room_time" required>
+        <option value="">Chọn giờ chơi</option>
+        <option value="9:00 → 10:00">9:00 → 10:00</option>
+        <option value="10:30 →11:30">10:30 →11:30</option>
+        <option value="12:00 → 13:00">12:00 → 13:00</option>
+        <option value="13:30 → 14:30">13:30 → 14:30</option>
+        <option value="15:45→ 16:45">15:45→ 16:45</option>
+        <option value="17: 15 →18:15">17: 15 →18:15</option>
+        <option value="18:45 → 19:45">18:45 → 19:45</option>
+        <option value="20:15 → 21:15">20:15 → 21:15</option>
+        <option value="21:45→22:45">21:45→22:45</option>
+        <option value="23:15→00:15">23:15→00:15</option>
+      </select>
+    <div class="uk-margin uk-text-center">
+      <button type="submit" class="btn-primary" style="color: #000000;text-align: center;text-decoration-line:underline;";>Xác nhận đặt phòng</button>
+    </div>
+  </form>
+</div>
+<style>
+</style>
+</section>
+
+<!--TRANG FAQ-->
+<section id="faq"class="uk-section">
+  <title>FAQ - Enigma Escape</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #f0f0c0;
+      padding: 40px 20px;
+    }
+
+    h1 {
+    font-size: 36px; font-weight: 800; color: #FFD700; margin-bottom: 30px; font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 3em;
+    text-shadow: 0 0 10px rgba(255, 255, 100, 0.6);
+    }
+
+    .faq-container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .faq-item {
+      background: rgba(255, 255, 255, 0.05);
+      margin-bottom: 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question {
+      padding: 20px 24px;
+      cursor: pointer;
+      position: relative;
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #ffeb3b;
+      transition: 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background: rgba(255, 255, 50, 0.07);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 24px;
+      font-size: 1em;
+      color: #ddd;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 500px;
+      padding: 16px 24px 24px;
+    }
+
+    .arrow {
+      content: '';
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      border: solid #ffeb3b;
+      border-width: 0 3px 3px 0;
+      padding: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.open .arrow {
+      transform: translateY(-50%) rotate(-135deg);
+    }
+
+    ::selection {
+      color: #111;
+    }
+
+    @media screen and (max-width: 600px) {
+      .faq-question {
+        font-size: 1em;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+  <h1>GÓC GIẢI ĐÁP THẮC MẮC CỦA KHÁCH IU</h1>
+  <div class="faq-container">
+
+    <div class="faq-item">
+      <div class="faq-question">Escape room là gì? Có phải là trò chơi kinh dị không?
+        <div class="arrow"></div>
+      </div>
+      <div class="faq-answer">
+        Escape room là trò chơi nhập vai thực tế, bạn và nhóm bạn sẽ vào một căn phòng theo chủ đề (kỳ bí, phiêu lưu, trinh thám) và cùng nhau giải đố để “thoát ra” trong khoảng thời gian nhất định. <br>Phần lớn các phòng chơi của Enigma theo chủ đề kinh dị có độ khó vừa phải.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Độ tuổi nào có thể chơi được?
+        <div class="arrow"></div>
+      </div>
+      <div class="faq-answer">
+        Giới hạn độ tuổi của người chơi từ <b>12 tuổi trở lên</b>. Từ 12-16 tuổi nên có người lớn đồng hành. Với các phòng chơi có độ khó 5 sao sẽ phù hợp cho người chơi từ <b>16 tuổi trở lên</b>.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Tôi có thể chơi một mình được không?
+        <div class="arrow"></div>
+      </div>
+      <div class="faq-answer">
+        Escape Room tốt nhất là chơi theo nhóm để giải đố nhanh hơn và vui hơn. Tuy nhiên, nếu bạn muốn chơi một mình, vui lòng liên hệ trước để chúng tôi tư vấn phòng phù hợp.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Có cần đặt cọc hoặc thanh toán ngay khi đặt phòng không?
+        <div class="arrow"></div>
+      </div>
+      <div class="faq-answer">
+        Nếu bạn chỉ đặt 1 ca chơi, thì không cần thanh toán hoặc đặt cọc ngay.<br>
+        Tuy nhiên, với các đơn đặt từ 2 ca trở lên, bạn cần chuyển khoản đặt cọc trong thời gian quy định để Enigma giữ chỗ giúp bạn.<br>
+        Nếu quá thời gian này mà chưa nhận được cọc, lịch đặt sẽ bị hủy để đảm bảo cho các khách khác.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Có thể hủy hoặc đổi lịch chơi được không?
+        <div class="arrow"></div>
+      </div>
+      <div class="faq-answer">
+        Nếu bạn đã đặt cọc và muốn hủy hoặc đổi lịch, vui lòng liên hệ Enigma qua Fanpage Facebook.<br><br>
+        ⏰ Trường hợp hủy/đổi lịch:<br>
+        - Trước 24 giờ: <b>Hoàn lại 100% cọc</b><br>
+        - Từ 12 - 24 giờ: <b>Không hoàn cọc, nhưng được đổi lịch 1 lần</b><br>
+        - Dưới 12 giờ: <b>Không hoàn, không đổi</b><br>
+        ❌ Nếu đến nơi mà không chơi: mất cọc<br>
+        🎮 Dừng chơi giữa chừng: không hoàn phí
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Tôi có được mang đồ ăn hoặc thức uống vào phòng chơi không?
+        <div class="arrow"></div>
+      </div>
+      <div class="faq-answer">
+        Rất tiếc, không được phép mang đồ ăn hoặc thức uống vào phòng chơi để đảm bảo vệ sinh và thiết bị, giúp bạn tập trung hoàn toàn vào trải nghiệm.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Tôi có được chụp ảnh hoặc quay video trong phòng chơi không?
+        <div class="arrow"></div>
+      </div>
+      <div class="faq-answer">
+        Không. Việc chụp ảnh/quay video trong phòng chơi là không được phép để bảo mật nội dung game. Bạn sẽ được chụp ảnh lưu niệm tại khu vực quy định sau khi kết thúc thử thách.
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach((question) => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+</section>
+<!--TRANG TUYỂN DỤNG-->
+<section id="recruitment">
+<title>Tuyển dụng - Enigma Escape Room</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<style>
+  #recruitment {
+    background: none,url('https://genesis-escape.vn/img/24/how_2.png') center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 80px 20px;
+  }
+  .recruitment-box {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 700px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(170, 197, 254, 0.5);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+  }
+
+  .recruitment-box.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .recruitment-box.left {
+    margin-left: 0;
+    margin-right: auto;
+    border-left: 5px solid #FFD700;
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .recruitment-box.right {
+    margin-left: auto;
+    margin-right: 0;
+    border-right: 5px solid #FFD700;
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  @media (max-width: 768px) {
+    .recruitment-box.left,
+    .recruitment-box.right {
+      margin: 20px auto;
+      border: none;
+    }
+  }
+
+  h2.section-title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #FFD700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    
+  }
+
+  .highlight {
+    color: #FFD700;
+    font-weight: bold;
+  }
+
+  .section-subtitle {
+    font-size: 25px;
+    margin-top: 20px;
+    color: #FFD700;
+    font-weight: bold;
+    border-left: 4px solid #FFD700;
+    padding-left: 10px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 15px;
+    margin-top: 40px;
+  }
+</style>
+  <h2 class="section-title">
+    <lottie-player src="https://lottie.host/f10a8c8c-0d99-41c4-a0f1-3f681f5ef0b4/NXt7jNzIAh.json" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></lottie-player>
+    ENIGMA TUYỂN "NGƯỜI NHÀ"
+  </h2>
+  <div class="recruitment-box left">
+      <div class="section-subtitle">🗝️ Bạn từng thắc mắc điều gì đang diễn ra phía sau cánh cửa Escape Room?</div>
+    <p>Đó không chỉ là những câu đố hack não, tiếng đồng hồ đếm ngược hay tiếng hò reo khi nhóm chơi giải được mật mã cuối cùng.
+      Đằng sau những trải nghiệm gay cấn ấy là một <span class="highlight">đội ngũ âm thầm</span> vận hành – người tạo nên không khí ly kỳ, người dẫn dắt khách chơi vào một <span class="highlight">thế giới hoàn toàn khác</span>.
+     </p>
+  </div>
+
+  <div class="recruitment-box right">
+      <div class="section-subtitle">👻 Muốn tham gia cùng chúng tôi không?</div>
+    <p>Chúng tôi đang tìm kiếm những thành viên mới yêu thích sự <span class="highlight">mới lạ, rùng rợn, luôn sẵn sàng đối mặt với những thử thách về trí tuệ và thể chất</span> để "điều phối hậu trường" cho những cuộc phiêu lưu bí ẩn!</p>
+  </div>
+
+  <div class="recruitment-box left">
+    <div class="section-subtitle">📌 Mô tả công việc</div>
+    <ul>
+      <li>Đón tiếp và hướng dẫn khách tham gia trò chơi</li>
+      <li>Vận hành hệ thống game, theo dõi quá trình chơi</li>
+      <li>Set-up và dọn dẹp phòng sau mỗi lượt chơi</li>
+      <li>Giải thích luật chơi, hỗ trợ khách khi cần</li>
+    </ul>
+  </div>
+
+  <div class="recruitment-box right">
+    <div class="section-subtitle">👥 Đối tượng tuyển dụng</div>
+    <ul>
+      <li>Nam/Nữ từ 18 đến 22 tuổi</li>
+      <li>Giao tiếp tốt, nhanh nhẹn, có trách nhiệm</li>
+      <li>Không yêu cầu kinh nghiệm, sẽ được đào tạo</li>
+    </ul>
+  </div>
+
+  <div class="recruitment-box left">
+    <div class="section-subtitle">🕒 Thời gian & Thu nhập</div>
+    <p>Làm theo ca, linh hoạt thời gian. Ưu tiên làm tối/cuối tuần.</p>
+    <p><span class="highlight">Mức lương: 20.000đ – 30.000đ/giờ</span>, tùy năng lực và vị trí.</p>
+  </div>
+
+  <div class="recruitment-box right">
+    <div class="section-subtitle">🎁 Quyền lợi</div>
+    <ul>
+      <li>Làm việc trong môi trường thân thiện, trẻ trung</li>
+      <li>Được đào tạo kỹ năng giao tiếp, xử lý tình huống</li>
+      <li>Trải nghiệm miễn phí phòng chơi Enigma</li>
+      <li>Có thể hỗ trợ xác nhận thực tập nếu cần</li>
+    </ul>
+  </div>
+
+  <div class="recruitment-box left">
+    <div class="section-subtitle">📍 Địa điểm làm việc</div>
+    <p>58 Chùa Láng, Láng Thượng, Đống Đa, Hà Nội</p>
+  </div>
+
+  <div class="recruitment-box right">
+    <div class="section-subtitle">📨 Cách ứng tuyển</div>
+    <p>Gửi CV hoặc vài dòng giới thiệu bản thân qua email: <span class="highlight">[Email liên hệ]</span> hoặc nhắn tin fanpage Enigma để được hướng dẫn.</p>
+  </div>
+
+  <div class="recruitment-box left">
+    <div class="section-subtitle">📝 Ứng tuyển ngay tại đây</div>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd6DX1VWjx48XnDDkFsAIYlCOpU-r1anuxGDYFa16E8lsMvmQ/viewform?embedded=true">Đang tải…</iframe>
+  </div>
+</section>
+<script>
+  const boxes = document.querySelectorAll('.recruitment-box');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+  boxes.forEach(box => observer.observe(box));
+</script>         
+</section>            
+<!--TRANG LIÊN HỆ-->
+<section id="contact" class="uk-section">
+  <div style="max-width: 1200px; margin: auto; padding: 0 20px;">
+    <h2 style="text-align: center; font-size: 32px; margin-bottom: 30px; border-bottom: 2px solid #ffffff; display: inline-block; text-align: center; font-family:'Times New Roman', Times, serif; color:#FFD700;">
+      CONTACT ENIGMA NOW
+    </h2>
+    <!-- Info -->
+    <div style="text-align:justify; margin-bottom: 40px;">
+      <p><span style="margin-right: 8px;text-align: center; font-family: 'Times New Roman', Times, serif;"></span>📧 enigma.escape@gmail.com</p>
+      <p><span style="margin-right: 8px;text-align: center; font-family: 'Times New Roman', Times, serif;"></span> 📞 0399367162</p>
+    <!-- Maps -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+      <!-- Map 1 -->
+      <div style="flex: 1 1 45%; min-width: 300px;">
+        <iframe
+          src="https://www.google.com/maps?q=189+P.+Hoàng+Cầu,+Đống+Đa,+Hà+Nội&output=embed"
+          style="width: 100%; height: 400px; border: none; border-radius: 12px;"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <!-- Map 2 -->
+      <div style="flex: 1 1 45%; min-width: 300px;">
+        <iframe
+          src="https://www.google.com/maps?q=158+P.+Chùa+Láng,+Đống+Đa,+Hà+Nội&output=embed"
+          style="width: 100%; height: 400px; border: none; border-radius: 12px;"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
